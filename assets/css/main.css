@@ -1,0 +1,723 @@
+/* main.css
+Брейкпоинты: 480px, 768px, 1024px
+Ширина контента: минимальная 320px, максимальная 1230px */
+
+/* Содержание
+
+1. Общие настройки HTML и страницы: *, html, body
+2. Формат body: header, main, footer, контейнеры
+3. Общие параметры HTML, включая кастомные классы: отображение при различной ширине экрана
+4. Общие элементы HTML, включая кастомные классы: headings и кастомные размеры шрифтов, paragraphs, ссылки, списки
+5. Кастомные элементы HTML: header-container, footer-container, social-icon, main-container
+6. NONE Gutenberg blocks: ...
+7. NONE Non-Gutenberg blocks: ...
+
+*/
+
+/* 1. Общие настройки HTML и страницы: *, html, body */
+
+/* 1.1. * */
+
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* END 1.1 */
+
+/* 1.2. html */
+
+html {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  font-family: "Inter var", sans-serif;
+  font-size: 17px;
+  color: #363636;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* END 1.2 */
+
+/* 1.3. body */
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* END 1.3 */
+
+/* END 1 */
+
+/* 2. Формат body */
+
+/* 2.1. header */
+
+header {
+  width: 100%;
+  grid-area: header;
+  border-bottom: 1px gainsboro solid;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+/* END 2.1 */
+
+/* 2.2. main */
+
+main {
+  width: 100%;
+  grid-area: main;
+  margin-top: 83.75px;
+  line-height: 1.5;
+}
+
+/* END 2.2 */
+
+/* 2.3. footer */
+
+footer {
+  width: 100%;
+  grid-area: footer;
+  border-top: 1px gainsboro solid;
+}
+
+/* END 2.3 */
+
+/* END 2 */
+
+/* 3. Общие параметры HTML, включая кастомные классы: отображение при различной ширине экрана
+
+/* 3.1. Отображение при различной ширине экрана */
+
+@media screen and (max-width: 480px) {
+  .min-480 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .max-480 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .min-768 {
+    display: none;
+  }
+}
+
+/* END 3.1 */
+
+/* END 3 */
+
+/* 4. Общие элементы HTML, включая кастомные классы: headings и кастомные размеры шрифтов, paragraphs, ссылки, списки */
+
+/* 4.1. Headings и кастомные размеры шрифтов */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 0;
+  line-height: 1.3;
+  font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+  overflow-wrap: break-word;
+}
+
+h2,
+.post-title {
+  font-size: 2.441rem;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5,
+.text-l {
+  font-size: 1.25rem;
+}
+
+.text-m {
+  font-size: calc(1rem + 1px);
+}
+
+/* END 4.1 */
+
+/* 4.2. Paragraphs */
+
+p {
+  margin-top: 0.75rem;
+  max-width: 1230px;
+  line-height: 1.5rem;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p {
+  margin-top: 1.5rem;
+}
+
+/* END 4.2 */
+
+/* 4.3. Ссылки */
+
+a {
+  color: rgba(0, 55, 142);
+  background-image: linear-gradient(
+    rgba(0, 55, 142, 0.2),
+    rgba(0, 55, 142, 0.2)
+  );
+  background-position-x: 0px;
+  background-position-y: 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 1px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a > svg {
+  fill: rgba(0, 55, 142);
+}
+
+a:hover {
+  color: #c12500;
+  background-image: linear-gradient(
+    rgba(193, 37, 0, 0.2),
+    rgba(193, 37, 0, 0.2)
+  );
+}
+
+a:hover > svg {
+  fill: #c12500;
+}
+
+/* END 4.3 */
+
+/* 4.4. Списки */
+
+ul,
+ol {
+  line-height: 1.5rem;
+}
+
+/* END 4.4 */
+
+/* 5. Кастомные элементы HTML: header-container, footer-container, social-icon */
+
+/* 5.1. header-container */
+
+#header-container {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  #header-container {
+    padding: 0;
+  }
+}
+
+#header-content {
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  #header-content {
+    padding: 0.75rem;
+  }
+}
+
+#header-logo-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-logo {
+  background-image: none;
+}
+
+#header-logo > img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+#header-title {
+  margin-top: 0.375rem;
+}
+
+#header-menu-order {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#header-menu.header-menu_midsize {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1025px) {
+  #header-menu.header-menu_midsize {
+    display: none;
+  }
+}
+
+.header-menu__block-title svg {
+  width: 32px;
+  height: 32px;
+  color: dimgrey;
+}
+
+@media screen and (max-width: 1024px) {
+  #header-menu.header-menu_fullsize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 44.5px;
+    border: 1px gainsboro solid;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #header-menu.header-menu_fullsize {
+    left: 0;
+    top: calc(1rem - 1px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #header-menu.header-menu_midsize:hover + #header-menu.header-menu_fullsize,
+  #header-menu.header-menu_fullsize:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.header-menu__block {
+  position: relative;
+}
+
+.header-menu__block-title {
+  padding: 0.75rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .header-menu__block-title > a {
+    background-image: none;
+  }
+}
+
+.header-menu__block-title.current {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-menu__block-content {
+  position: absolute;
+  border: 1px gainsboro solid;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  background-color: white;
+  list-style-type: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .header-menu__block-content {
+    top: 0;
+    right: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-menu__block-content {
+    right: 0;
+    top: calc(100% - 1px);
+    z-index: 2;
+  }
+}
+
+.header-menu__block-title:hover + .header-menu__block-content,
+.header-menu__block-content:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header-menu__block-content .menu-item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.375rem 0.75rem;
+}
+
+.header-menu__block-content .menu-item.current-menu-item {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-menu__block-content a {
+  white-space: nowrap;
+}
+
+#header-order {
+  margin-left: 2.25rem;
+  padding: 0.75rem;
+  background-color: rgb(26, 152, 252);
+}
+
+@media screen and (max-width: 480px) {
+  #header-order {
+    margin-left: 0.375rem;
+  }
+}
+
+#header-order a {
+  color: white !important;
+  background-image: none;
+}
+
+/* END 5.1 */
+
+/* 5.2. footer-container */
+
+#footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#footer-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#footer-top-container {
+  margin: 0 auto;
+  max-width: 1230px;
+  padding: 0 1.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 481px) {
+  #footer-top-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer-top-container {
+    padding: 0 0.75rem;
+  }
+}
+
+#footer-top-container > div {
+  padding: 1.5rem;
+}
+
+#footer-top-container > div:first-child {
+  padding-left: 0;
+}
+
+#footer-top-container > div:last-child {
+  padding-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #footer-top-container {
+    justify-content: space-around;
+  }
+
+  #footer-top-container > div:nth-child(2) {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer-top-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  #footer-top-container > div:nth-child(2) {
+    padding-right: 0;
+  }
+
+  #footer-top-container > div:last-child {
+    padding-left: 0;
+  }
+}
+
+#footer-title-pitch {
+  flex-basis: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  #footer-title-pitch {
+    display: none;
+  }
+}
+
+#footer-agency,
+#footer-contact {
+  flex-basis: 25%;
+}
+
+#footer-title {
+  font-weight: 600;
+}
+
+#footer-pitch {
+  margin-top: 0.75rem;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: dimgray;
+}
+
+#footer-agency-title {
+  font-weight: 600;
+}
+
+#footer-agency-content {
+  margin-top: 0.75rem;
+}
+
+.footer-agency-item > a {
+  white-space: nowrap;
+}
+
+.footer-agency-item:not(.first-child) {
+  margin-top: 0.75rem;
+}
+
+@media screen and (max-width: 480px) {
+  #footer-contact {
+    padding-top: 0.75rem !important;
+  }
+}
+
+#footer-social-title {
+  font-weight: 600;
+}
+
+#footer-social-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.footer-social-list__item:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.footer-social-list__item > a {
+  background-image: none;
+}
+
+#footer-email {
+  margin-top: 0.75rem;
+}
+
+#footer-phone {
+  margin-top: 0.75rem;
+}
+
+#footer-bottom {
+  width: 100%;
+  background-color: rgb(26, 152, 252);
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1.5em;
+}
+
+#footer-bottom-container {
+  margin: 0 auto;
+  max-width: 1230px;
+  padding: 0 1.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  #footer-bottom-container {
+    padding: 0 0.75rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+#footer-copyright-legal {
+  padding: 0.75rem 1.125rem 0.75rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  #footer-copyright-legal {
+    padding-right: 0;
+  }
+}
+
+#footer-copyright,
+#footer-legal {
+  text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  #footer-copyright {
+    text-align: center;
+  }
+}
+
+#footer-legal {
+  font-weight: 300;
+}
+
+#footer-kaluga {
+  padding: 0.75rem 0 0.75rem 1.125rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  #footer-kaluga {
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
+
+/* END 5.2 */
+
+/* 5.3. social-icon */
+
+.social-icon > svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* END 5.3 */
+
+/* 5.4. main-container */
+
+#main-container {
+  padding: 1.5rem 0 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 5.4.1. main-content */
+
+#main-content {
+  width: 100%;
+}
+
+.page-title {
+  margin: 0 auto;
+  max-width: 1230px;
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+}
+
+@media screen and (max-width: 480px) {
+  .page-title {
+    padding-left: 0.75rem;
+    padding-right: calc(0.75rem + 5vw);
+  }
+}
+
+.page-content {
+  margin: 1.5rem auto 0;
+}
+
+.page-content > h2,
+.page-content > p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1230px;
+  padding-left: 1.125rem;
+  padding-right: calc(0.75rem + 15vw);
+}
+
+@media screen and (max-width: 480px) {
+  .page-content > h2,
+  .page-content > p {
+    padding-left: 0.75rem;
+    padding-right: calc(0.75rem + 5vw);
+  }
+}
+
+/* END 5.4.1 */
+
+/* END 5.4 */
+
+/* END 5 */
