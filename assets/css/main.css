@@ -227,13 +227,6 @@ a:hover > svg {
 
 /* 4.4. Списки */
 
-ul,
-ol {
-  margin-top: 0.75rem;
-  padding-left: 2.25rem;
-  line-height: 1.5rem;
-}
-
 h1 + ul,
 h1 + ol,
 h2 + ul,
@@ -245,10 +238,6 @@ h4 + ol,
 h5 + ul,
 h5 + ol {
   margin-top: 1.5rem;
-}
-
-li {
-  margin-top: 0.375rem;
 }
 
 /* END 4.4 */
@@ -736,10 +725,9 @@ li {
 }
 
 .page-content > ul {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1.5rem auto 0 auto;
   max-width: 1230px;
-  padding-left: 2.25rem;
+  padding-left: 3rem;
   padding-right: calc(0.75rem + 15vw);
 }
 
@@ -754,6 +742,10 @@ li {
     padding-left: 1.5rem;
     padding-right: calc(0.75rem + 5vw);
   }
+}
+
+.page-content > ul > li:not(:first-child) {
+  margin-top: 0.375rem;
 }
 
 /* END 5.4.1 */
